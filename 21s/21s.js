@@ -96,7 +96,7 @@ playTheGame = () => {
   } while (player1.handScore < 17)
 
   if (player1.handScore > 21) {
-    console.log(player1.name + ' has lost the game')
+    console.log(player1.name + ' has lost the game and ' + player2.name + ' wins')
     return
   }
   else{
@@ -105,7 +105,7 @@ playTheGame = () => {
     } while (player2.handScore < 17)
 
     if (player2.handScore > 21) {
-      console.log(player2.name + ' has lost the game')
+      console.log(player2.name + ' has lost the game and ' + player1.name + ' wins')
       return
     }
   }
