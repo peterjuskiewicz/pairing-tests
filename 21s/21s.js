@@ -63,20 +63,37 @@ deck.sort(() => {return 0.5 - Math.random()})
 const player1 = new Player('Dealer')
 const player2 = new Player('Sam')
 
-// deal 2 cards to each player
-
-player1.takeCard(deck)
-player1.takeCard(deck)
-
-player2.takeCard(deck)
-player2.takeCard(deck)
 
 // simple game engine
 playTheGame = () => {
 
+  // deal 2 cards to each player
+
+  player1.takeCard(deck)
+  player1.takeCard(deck)
+
+  player2.takeCard(deck)
+  player2.takeCard(deck)
+
+  // check for blackjack
+
+  if(player1.hasBlackjack && player2.hasBlackjack){
+    console.log('draw')
+    return
+  } else if (player1.hasBlackjack){
+    console.log(player1.name + ' wins')
+    return
+  } else if (player2.hasBlackjack){
+    console.log(player2.name + ' wins')
+    return
+  }
+
+
+
+
   do {
     player1.takeCard(deck)
-  } while (player1.handScore <= 17)
+  } while (player1.handScore < 17)
 
   if (player1.handScore > 21) {
     console.log(player1.name + ' has lost the game')
@@ -85,20 +102,22 @@ playTheGame = () => {
   else{
     do {
       player2.takeCard(deck)
-    } while (player2.handScore <= 17)
+    } while (player2.handScore < 17)
 
     if (player2.handScore > 21) {
       console.log(player2.name + ' has lost the game')
       return
     }
   }
-
-  player1.handScore > player2.handScore ? console.log(player1.name + ' wins') : console.log(player2.name + ' wins')
+  if(player1.handScore === player2.handScore){
+    console.log('draw')
+    return
+  }else{
+    player1.handScore > player2.handScore ? console.log(player1.name + ' wins') : console.log(player2.name + ' wins')
+  }
 
 
 }
-
-console.log(deck.length)
 
 playTheGame()
 
