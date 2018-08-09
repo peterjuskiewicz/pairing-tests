@@ -80,7 +80,7 @@ const createConstituency = (string) => {
         area.snp = parseInt(arr[i - 1].trim(), 10);
       }
       else{
-        addError(string);
+        addErrorToLog(string);
         return null;
       }
     }
@@ -137,15 +137,10 @@ Following lines contain error:
 `;
 
 const addErrorToLog = (string) => {
-
-  errorText = `${errorText}${errorCount} ${string}
-    `
-};
-
-const addError = (err) => {
   hasErrors = true;
   errorCount++;
-  addErrorToLog(err);
+  errorText = `${errorText}${errorCount} ${string}
+    `
 };
 
 // Predict election results
