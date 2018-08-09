@@ -1,9 +1,8 @@
 const results = "Cardiff West, 11014, C, 17803, L, 4923, UKIPs, 2069, LD\n" +
   "Islington South & Finsbury, 22547, L, 9389, C, 4829, LD, 3375, UKIP, 3371, G, 309, Ind";
 
-// This programm will read the text and create array of Constituency objects to modify
-// data and return it in standard format. It has also simple built in validation to check
-// for party names
+// This program will read the text and create array of Constituency objects to modify
+// data and return it in standard format. It has simple validation to check for party names
 
 class Constituency{
   constructor(name){
@@ -55,7 +54,7 @@ const createConstituency = (string) => {
 
     let arr;
 
-    if(typeof(string === 'string')){
+    if(typeof(string) === 'string'){
       arr = string.split(',');
     }
     else{
@@ -88,7 +87,6 @@ const createConstituency = (string) => {
     return area;
 };
 
-
 // print results in a standard format
 
 const printResults = (obj) => {
@@ -108,7 +106,7 @@ const printResults = (obj) => {
   SNP: ${obj.snpPercentage}%`;
 
   return result;
-}
+};
 
 // print error log with easy to understand description
 
@@ -153,12 +151,10 @@ const addError = (err) => {
 // Predict election results
 
 
-
+// to be implemented
 
 
 const splitResults = results.split('\n');
-
-// finalResults is an array of objects where values can be easly modified
 
 const finalResult =  splitResults.map((string) => createConstituency(string));
 
