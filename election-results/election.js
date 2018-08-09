@@ -43,7 +43,6 @@ class Constituency{
   }
 }
 
-
 // function to be used with map to return array of objects
 
 const createConstituency = (string) => {
@@ -144,10 +143,7 @@ const addErrorToLog = (string) => {
 };
 
 // Predict election results
-
-
 // to be implemented
-
 
 const splitResults = results.split('\n');
 
