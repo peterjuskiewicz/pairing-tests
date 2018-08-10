@@ -8,7 +8,7 @@ const slotArray = [slot1, slot2, slot3, slot4];
 const colorArray = ['black', 'white', 'blue', 'yellow'];
 // const colorArray = ['black', 'black', 'black', 'black'];
 
-let playerMoney = 100;
+let playerMoney = 1000;
 
 let jackpotValue = 1000;
 
@@ -43,16 +43,16 @@ const playGame = () => {
 
   if(jackpotArray.reduce(function(a, b){ return (a === b) ? a : false; })){
 
-    message.innerText = 'you won ' + jackpotValue + '$'
-
     playerMoney += jackpotValue;
+    message.innerText = `you won ${jackpotValue}$ and have ${playerMoney}$`
+
     jackpotValue = 0;
     cashToWin.innerText = `you can win ${jackpotValue}$`
 
   }else{
-    message.innerText = `try again to win, you have ${playerMoney}$ left`
     jackpotValue += 10;
     playerMoney -= 10;
+    message.innerText = `try again to win, you have ${playerMoney}$ left`
     cashToWin.innerText = `you can win ${jackpotValue}$`
 
   }
