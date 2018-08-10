@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        .slot-container {
+
+        }
+        .slot {
+            height: 30px;
+            width: 30px;
+            margin: 3px;
+            border: 1px solid black;
+            display: inline-block;
+        }
+    </style>
+    <title>Fruit machine</title>
+</head>
+<body>
+    <div class="slot-container">
+
+        <div class="slot" id="first"></div>
+        <div class="slot" id="second"></div>
+        <div class="slot" id="third"></div>
+        <div class="slot" id="fourth"></div>
+
+    </div>
+
+    <div class="interaction-container" id="interaction">
+        <button id="play-button" onclick="playGame();">play</button>
+
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
