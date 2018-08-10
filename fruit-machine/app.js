@@ -8,7 +8,7 @@ const slotArray = [slot1, slot2, slot3, slot4];
 const colorArray = ['black', 'white', 'blue', 'yellow'];
 // const colorArray = ['black', 'black', 'black', 'black'];
 
-let playerMoney = 1000;
+let playerMoney = 100;
 
 let jackpotValue = 1000;
 
@@ -52,9 +52,16 @@ const playGame = () => {
   }else{
     jackpotValue += 10;
     playerMoney -= 10;
-    message.innerText = `try again to win, you have ${playerMoney}$ left`
-    cashToWin.innerText = `you can win ${jackpotValue}$`
-
+    message.innerText = `try again to win, you have ${playerMoney}$ left`;
+    cashToWin.innerText = `you can win ${jackpotValue}$`;
+    if(playerMoney < 10){
+      message.innerText = 'you run out of money'
+    }
   }
 
+}
+
+const addFloat = () => {
+  jackpotValue += Number.parseInt(document.getElementById('float-amount').value);
+  cashToWin.innerText = `you can win ${jackpotValue}$`
 }
